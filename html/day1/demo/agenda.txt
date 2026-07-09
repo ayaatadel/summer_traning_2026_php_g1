@@ -1,0 +1,121 @@
+---- introduction to html
+
+    HTML ---> Hyper Text Markup Language 
+               ----> tags  --> structure 
+               --> main structure for any website 
+               --> browser ---> html (1991)
+               ---> HTML version 5 
+               --- extension ==> pageName.html
+                      ----> small 
+                      ---> first-page
+                      ---> firstPage
+
+
+        ========================
+        Hyper Text Markup Language   (tags  <>)  ====> structure 
+
+       
+        <!DOCTYPE html>     ===> version 5
+
+        <html>         (head || body)
+
+         <head>
+         brain of pages (settings of page)
+         --- title
+         -- meta tags
+         </head>
+
+         <body>
+
+         content 
+         </body>
+
+
+        </html>
+
+
+
+        html -----> special sentax (tags )
+        tags --->
+         openning closing tag        <tagName>   content    </tagName>
+        self cloding tag (empty tag || void tag)    <tag>  || <tagName/>
+           ------- content ?? <tagName> 
+          
+
+
+          ======== Attributes 
+                    public attributes (can be with all tags)
+                    specif attributes (element attributes)
+        ========================
+-- tools 
+   -- vs code
+   -- browser (google - edge)
+
+
+
+   ===================== comment ========
+      --- show 
+      == documentation 
+
+   <!--   || ctrl + ظ
+   comment
+   comment
+   
+   
+     -->
+
+
+    head tags 
+    --- style
+    -- title 
+    -- meta tags
+
+***********************************   
+    SEO ========> Search Engine Optimization || site apperas  
+******************
+tag 
+tag
+======> 
+tag in tag 
+<html>
+<head>
+<body>
+
+</html>
+
+
+==========
+list 
+  -- ordered list   (1,A , I)    <ol> (container)   </ol>  ---> li
+  -- un ordered list   (ul)  -> li  
+  -- description list (dl)
+     description item (dt)=====> description data (dd)
+  -------- list item
+
+
+
+  ================
+  head
+  body ====>
+     -- navbar
+     -- content
+     -- aside
+     -- footer
+
+
+
+     ============ path 
+         -- reletaive path   ===> ../day2  ===> 
+         -- absolute path   ============>  D:\summer_traning_2026\php_g1_2026\html\day1
+
+
+
+
+         ============ form :  
+              -- action  : action that form execute  (path)
+              -- method   : send data || get data
+              /**
+              send data  : post   ---------->   hidden from url
+              get data    : get   ---------->    show in url
+              updata data  : put  --->   
+              delete data  : delte   --->
