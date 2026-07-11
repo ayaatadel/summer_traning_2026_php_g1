@@ -1,0 +1,10 @@
+====== download font (use in code)
+===  background-size:contain || cover; 
+=== outline
+
+============ 
+float
+flex and grid
+position
+animation
+media query

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    color:var(--links-color);
+}
+
+:root{
+    --links-color:rgb(62, 64, 69);
+    --main-color:rgb(132, 99, 88);
+    --main-font:"DM Sans", sans-serif;
+}
+
+/*   navbar */
+
+
+.navbar__links, .navbar__logo, .navbar__buttons {
+    display: inline-block;
+    margin: 10px 20px;
+
+}
+
+.navbar__logo {
+    width: 20%;
+    
+}
+.nav_bar_logo_icon{
+    padding: 10px;
+    width: 51px;
+    height: 51px;
+    margin-right: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.nav_bar_logo_icon i {
+    
+    font-size: 40px;
+    background-color: var(--main-color);
+    color: white;
+
+}
+.navbar__logo  p{
+    display: inline-block;
+   width: 60%;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: var(--main-font);
+}
+.navbar__logo span{
+    display: block;
+   font-weight: 400;
+   font-size:
+12px;
+
+}
+
+.navbar__links {
+    width: 40%;
+    text-align: center;
+}
+
+.navbar__links__item {
+    display: inline-block;
+    margin: 0px 20px;
+
+}
+
+.navbar__buttons {
+    width: 20%;
+
+}
+
+.navbar__buttons__icon {
+    display: inline-block;
+    /* background-color:rgb(111, 11, 11); */
+
+}
+
+.navbar__buttons__icon i {
+    /* width:70px !important;
+    height:80px!important; */
+    font-size: 20px;
+    color: rgb(132, 99, 88)
+}
+
+.navbar__buttons__btn {
+    background-color: var(--main-color);
+    border-radius: 24px;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-family: var(--main-font);
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+}
+
+.navbar__buttons__btn:hover{
+    background-color: white;
+    color:rgb(77, 60, 54); 
+    border-color:var(--main-color);
+    border-style: solid;
+}
+.navbar__buttons__icon :hover {
+    text-align: center;
+    
+        background-color: rgba(172, 88, 88, 0.389);
+        width: 30px;
+        height: 30px;
+        padding: 2px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+}

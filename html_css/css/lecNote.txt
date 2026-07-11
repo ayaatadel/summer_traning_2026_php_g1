@@ -1,0 +1,192 @@
+css ===> cascading style sheets
+
+inline style   ===> in tag 
+enternal style   ===> <style>  </style>  (head)
+external style  ===> external file 
+
+================== perioerty ===========
+inline    =========> most perority
+internal    =====>
+external       
+
+
+======================
+
+selector {
+    proiperity: value
+}
+
+
+=============>  seloector 
+global selector (sheet)
+
+global selector  (element)     specific selector
+
+tag name               id , class 
+
+
+// .className {}
+// #idName  {}
+
+
+========> css specifity   Selector Specificity: (id, class, tag) =>(0,0,0)
+inline style (in tag in html) ==> 1000
+id  (1,0,0) ==>100
+class (0,1,0) ==> 10
+tag  (0,0,1)  ==>1
+
+===============>
+id : unique
+class : can repeat
+========> class id class
+
+p#pg.text  (1+100+10) =111
+p =1
+#pg =100
+
+
+
+===============
+selector.selName  ==> العنصر نفصه
+selector#selName
+
+p.text : البراجراف اللي واخد كلاس تكست
+
+div#container 
+
+
+div.conatiner{
+ style ===> div
+}
+
+div .text {
+ style ====> .text
+}
+
+
+
+===========?
+root ==> html 
+*====>
+
+
+============== color ======
+(red , green , blue)
+     == 0- 255
+rgb(255,0,0)  ==> red
+rgb(0,255,0) ==> green
+rgb(0,0,255) ==> blue
+rgb(255,0,255) ==> 
+rgb(255,255,255) ==>  white
+rgb(0,0,0) ==>  black
+
+
+=======
+ 0 -f
+
+ 00 00 00 ===> black
+ ff ff ff ===> white
+#00ff00
+
+================
+
+
+rgba ===> (a (0-1))
+
+=======================
+font weight (100-900)
+
+normal ===> p , span (300-400)  
+bold ===> headers (500 -900)
+
+
+
+
+==============>
+
+aboslute unit        relative unit
+px                    rem  : root (html)
+                      em : parent (if i had no parent ==> body)
+                      percentage : parent
+                      vh
+                      vw
+
+
+===========
+font 
+download ===> use 
+
+empeded ===> import in css 
+
+
+
+====================
+inline elemnt                          block element
+(span)                                  div,p,ul,li
+ 
+width : content                           width: row
+height : content                        heigth :content
+
+
+***********           box model ***************
+padding (overlapping)                    padding
+margin  (x)                                 margin
+
+cab be aside with another elemt  ||    didn't permit any element be aside it
+
+
+Box Model ========> content , padding , margin , border 
+
+**************************************** Display:inline-block
+
+width : default content   + accept (can be changed)
+hedght : default content   + accept (can be changed)
+
+accept elemnt + be beside 
+
+padding , margin
+
+
+
+
+
+content ==> 
+padding (content , border)  ===> top right bottom left 
+padding : 10px;
+padding :10px 12px 13px 15px 
+padding-right:10px
+padding-left:10px
+padding-bottom:10px
+padding-top:10px
+
+padding:10px 15px
+
+
+
+=============================
+margin (space beteen elemet and another element)
+
+margin : 10px;
+margin :10px 12px 13px 15px 
+margin-right:10px
+margin-left:10px
+margin-bottom:10px
+margin-top:10px
+margin:10px  26px
+
+
+----------- margin collaps (y)
+
+border 
+
+
+
+============================== width : 400px
+
+total width = padding(x) + content + border
+
+
+============= box sizing (border box , content box)
+--- border box -------------- width : total width (padding(x) + content + border)=400px
+
+- content box ---- width = 400 px (content) + paddind + border

@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+.block-ele{
+    display:inline-block;
+    background-color:rgb(167, 217, 166);
+    border:2px solid rgb(167, 217, 166);
+    width:200px;
+    height:150px;
+
+}
+
+.inline-ele{
+    display:inline-block;
+    /* padding:10px; */
+  width:200px;
+  height:150px;
+  background-color:rgb(18, 75, 17);
+  border:2px solid rgb(188, 30, 13);
+  /* margin:10px; */
+}
+
+
+.container{
+    background-color:rgb(167, 217, 166);
+    width:500px;
+    height:400px;
+    padding:10px;
+    border:2px solid rgb(167, 217, 166);
+}
+
+.div1{
+    box-sizing: border-box;
+    display:inline-block;
+    width:200px;
+    height:150px;
+    padding:50px;
+    background-color:rgb(109, 25, 188);
+    border:10px solid black;
+}
+.div2{
+    box-sizing: border-box;
+    display:inline-block;
+    width:200px;
+    height:150px;
+    padding:50px;
+    background-color:rgb(188, 128, 25);
+    border:10px solid black;
+}
