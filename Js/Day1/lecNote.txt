@@ -1,0 +1,46 @@
+=============== history of js  (java script)
+ 
+html + css===========> static pages 
+js + html + css ===========> dynamic pages (actions)
+
+-----------
+
+1994 == nescape   
+brenden eich =======> 1995 (10 days ) ---> mocha ----> live script ---> java script
+
+
+java            java script 
+
+jvm             browser (node js)
+
+
+micsrosoft ---> ie 
+
+(1997) ===> ecma ----------> es1 ===> ecma script 1   ---------------> 2015 (es6)
+
+
+
+========= java script
+
+web 
+front  + (native) , react js   (dymanic)
+back   + node js 
+
+
+mobile ===> react native (js)
+
+
+
+
+========================= where write code js ==========
+inline   =====> tag 
+enternal   ==> <script>    </script>
+external   ==> <script scr="path">    </script>
+
+============== broweser (java script engine)       ===> console  
+js engine : tool 
+
+chrome , edge  ===> v8 
+fire fox ----> spider monkey 
+IE ===> chakara 
+safari ===> nitro 

@@ -1,0 +1,9 @@
+====> history of js ===> dynamic ==> mocha ==> live script===>  javaScript ==> echma script 6 (ES6)
+where writing code of js
+variables  ===> var , const (let)
+datatypes
+operators     ===> 
+condition 
+control flow
+ternary operator
+commnunication with user  
