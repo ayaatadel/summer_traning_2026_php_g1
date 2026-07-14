@@ -1,0 +1,8 @@
+
+ -  Agenda :
+ - Object
+ - this
+ - call, apply, bind
+ - math object , date object
+ - Dom 
+ -
