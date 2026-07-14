@@ -307,15 +307,83 @@ var person = {
 
 // Date
 
-var date = new Date();
+// var date = new Date();
 
-// console.log(date);
-// console.log(date.getFullYear());
-// console.log(date.getMonth());
-console.log(date.getDate()); // day
-console.log(date.getDay()); // index ==> sunday ==> index 0
-var date2=date.setDate((date.getDate())+5);
-console.log(date2);
+// // console.log(date);
+// // console.log(date.getFullYear());
+// // console.log(date.getMonth());
+// console.log(date.getDate()); // day
+// console.log(date.getDay()); // index ==> sunday ==> index 0
+// var date2=date.setDate((date.getDate())+5);
+// console.log(date2);
+
+// DOM : Document Object Model
+// DOM Tree  ==> node (element)
+
+// document ==> html
+
+console.log(document); // change on html page
+
+// document.writeln("")
+
+// select any elemnt    ====> document
+/**
+ * id
+ * tagName
+ * class
+ * query selector
+ * query selector all
+ * parent Node
+ * first child
+ * last child
+ * children
+ */
+
+// var content = document.getElementById("text"); // element
+// console.log(content);
+
+// var pg = document.getElementsByTagName("p"); // HTMLCollection ==> array  ===> index
+// console.log(pg[1]);
+
+// var allText=document.getElementsByClassName("container")  // HTMLCollection
+// console.log(allText[0]);
+
+/**
+ * #idName
+ * .className
+ *
+ * ======================= Query selector
+//  */
+// var txt = document.querySelector(".container"); // node element
+// var txt = document.querySelectorAll(".container"); /// node List ===> array ==> index
+// // console.log(txt);
+
+// // =========== name
+// var userData = document.getElementsByName("data"); // NodeList ==>
+// console.log(userData);
+
+// // select first child
+
+// var txt = document.querySelector(".container"); // div
+
+// // console.log(txt.firstChild);
+// console.log(txt.lastChild);  // last element (txt)
+// console.log(txt.lastElementChild); // last elemem parent 
 
 
+//  write code 
 
+var content = document.getElementById("text"); // element
+
+//  inner html (write code html in page)
+content.innerHTML=`
+ <span style="color:red">
+            java script
+        </span>
+`
+
+// inner text ==> add text
+
+var head=document.getElementById("header")
+
+head.innerText="DOM"
