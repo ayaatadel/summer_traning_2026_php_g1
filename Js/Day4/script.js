@@ -264,7 +264,6 @@
 //   console.log("hello");
 // });
 
-
 // var inputName=document.getElementById("u-name");
 // var p=document.getElementById("txt");
 // inputName.addEventListener("keydown",(e)=>{
@@ -277,7 +276,6 @@
 // // p.innerText=e.target.value;
 // // p.innerText=e.key;
 // console.log(e.key);
-
 
 // })
 // inputName.addEventListener("input",(e)=>{
@@ -293,10 +291,127 @@
 // // p.innerText=e.key;
 // console.log(e.key);
 
+//=============== BOM : Browser Object Model  (browser)
+// --  page
+/**
+ * 
+ * window
+ * inner width
+ * inner height
+ * -------
+ * window
+ * open ()
+ * close
+ * resize
+ * resizeBy
+ * moveTo
+ * moveBy
+ * ------
+ * scroll
+ * scroll x
+ * scroll y
+ * ---------
+ * screen
+ * width
+ * height
+ * --------
+ * location
+ * href
+ * protocol
+ * port
+ * -----
+ * history
+ * ------
+ * navigator
+ * -------
+ * timers
+ */
+
+// var win;
+// var openBtn = document.getElementById("btn-open");
+// var closeBtn = document.getElementById("btn-close");
+// var resizeBtn = document.getElementById("btn-resize");
+// var resizeBYBtn = document.getElementById("btn-resizeBY");
+// var focusBtn = document.getElementById("btn-focus");
+// var moveBYbtn = document.getElementById("btn-moveBY");
+// var moveto = document.getElementById("btn-move");
 
 
-//=============== BOM : Browser Object Model 
+// openBtn.onclick = () => {
 
-
+//   win = open("./about.html", "_blank", "width=100;height=100,left=200,top=100");
+// };
+// closeBtn.onclick = () => {
+//     win.close()
+// };
+// moveto.onclick = () => {
+//      win.focus()
+//     win.moveTo(400,300);
+// };
+// moveBYbtn.onclick = () => {
+//      win.focus()
+//     win.moveTo(100,100);
+// };
+// focusBtn.onclick = () => {
+//     win.focus()
+// };
+// resizeBtn.onclick = () => {
+//      win.focus()
+//     win.resizeTo(300,200)
+// };
+// resizeBYBtn.onclick = () => {
+//      win.focus()
+//     win.resizeBy(100,200)
+// };
+// moveBYbtn.onclick = () => {
+//      win.focus()
+//     win.moveBy(100,200)
+// };
 
 // })
+
+
+
+/**
+ * setInterval ==> repeat any thing after time
+ * setTimeout  ==> exceite any thing after specific time
+ * 
+ * ===> time ==> ms
+ */
+
+// setTimeout(()=>{
+// console.log("hello");
+
+// },1000)
+setInterval(()=>{
+console.log("hello");
+
+},1000)
+
+function CreateImg()
+{
+var img=document.createElement("img");
+img.src="imgs/image.png";
+img.style.cssText=`
+width:100;
+height:100;
+border-radius:50%;
+
+`
+
+document.body.appendChild(img)
+}
+// var i=0;
+var interval=setInterval(()=>{
+    // i++;
+    CreateImg();
+// if(i==5)
+// {
+//      clearInterval(interval)
+// }
+
+},1000)
+
+setTimeout(()=>{
+clearInterval(interval);
+},5000)
