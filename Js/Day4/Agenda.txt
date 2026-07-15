@@ -1,0 +1,9 @@
+====> DOM
+--- Select Element 
+-- create Element
+-- class
+-- atrributes
+-- change style
+
+======= Event 
+=== BOM 
