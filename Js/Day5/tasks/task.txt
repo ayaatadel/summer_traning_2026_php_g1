@@ -3,4 +3,5 @@
 ===> findall
 
 
-////////// promise 
+////////// promise =====>https://jsonplaceholder.typicode.com/users
+----------------------- cards 
