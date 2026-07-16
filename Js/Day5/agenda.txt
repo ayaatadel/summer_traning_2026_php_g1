@@ -1,0 +1,25 @@
+====== Object
+   -- object.assign()
+   -- object.keys
+   -- object.entries
+   -- object.values
+
+======= destructring in array and object
+=============== array api
+foreach
+map
+filter
+
+
+Synchronus && Asynchronous functions
+=======
+hoisting
+========
+var , let , const
+===============
+Js engine  ==> call stack , heap
+
+
+----- Ajax (asynchronous java script and xml)  ====> xml (extensible markup language)
+-- Error handling
+-- promis

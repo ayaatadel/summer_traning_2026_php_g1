@@ -1,0 +1,19 @@
+/////////////// Js Run Time
+
+
+
+js engine                           callback       timesr
+
+btn=button                         event   << setTime(1)
+                                           << setTime(2)
+ x= 10
+result = function
+
+------------------ 
+second execution 
+************************* y=12 second 
+
+
+-------- result execucion  undefined click (fire) || 13 as1 14 as2 
+y= 12
+secnd:<fun>
