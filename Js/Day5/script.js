@@ -422,29 +422,184 @@
 // result();
 // ========================== Event
 
-var btn = document.getElementById("btn");
-btn.addEventListener("click", () => {
-  console.log("click");
-});
-var x = 10;
-var result = function () {
-  var y = 12;
+// var btn = document.getElementById("btn");
+// btn.addEventListener("click", () => {
+//   console.log("click");
+// });
+// var x = 10;
+// var result = function () {
+//   var y = 12;
 
-  setTimeout(() => {
-    y++;
-    console.log(y);
-    console.log("Asynchronous1");
-  }, 5000);
-  setTimeout(() => {
-    y++;
-    console.log(y);
-    console.log("Asynchronous2");
-  }, 6000);
+//   setTimeout(() => {
+//     y++;
+//     console.log(y);
+//     console.log("Asynchronous1");
+//   }, 5000);
+//   setTimeout(() => {
+//     y++;
+//     console.log(y);
+//     console.log("Asynchronous2");
+//   }, 6000);
 
-  function second() {
-    console.log(y);
-    console.log("second");
-  }
-  console.log(second());
+//   function second() {
+//     console.log(y);
+//     console.log("second");
+//   }
+//   console.log(second());
+// };
+// result();
+
+// ************************** hoisting   ==> use  variable (global), function before declar
+
+// console.log(x);  // undefined
+// var x=10;
+
+// console.log(x);   //  10
+
+/**
+ * x=10
+ */
+
+//================ hoisting for function
+/**
+ * regular function ======> function test(){}
+ */
+// x();
+// function x()
+// {
+//     console.log("hoisting");
+
+// }
+// result();  //===>undefined() /// error result is not a function
+
+// var result=function(){
+//     console.log("test");
+
+// }
+// result()
+/***
+ * x:fun
+ * result=undefined =========> fun
+ */
+//==============
+// console.log(y);  // error
+// function test()
+// {
+//     var y=5;
+//     console.log(y);
+
+// }
+
+// test();  //5
+// console.log(y); /// error
+/**
+ * 
+
+ * ==========
+ * test:func<>
+ */
+
+/**
+ * scoping  ====>
+ *
+ *
+ * var ==> blobal ===> in any where file
+ * var ==> function ===> function
+ */
+
+/**
+ *  declare variable   declare (var x ; || let x , const x)  || assignment (give value) ==> x=4
+ *
+ * var                                  let    (used)                                        const (constant vaiable)
+ * -----------------------------------  variabls -----------------------------------------------
+ * redclare                              not accept redeclar                           not accept
+ *  reAssign                            accept reassign                                 not accept
+ * hoisting                              not accept hoisting                             not accept hoisting
+ *
+ *
+ */
+//////////////////////////////// Redclare
+// var x=0;
+// var x=10;
+// console.log(x);
+// let x=0;
+// let x=10; //xxxxxxxxxxxxxxxxxxxxxxxxxx x is already declared
+// console.log(x);
+// const x=0;
+// const x=10; //xxxxxxxxxxxxxxxxxxxxxxxxxx x is already declared
+// console.log(x);
+
+// resaign
+// console.log(x);
+
+// let x=10;
+// x=15;
+// // console.log(x);
+
+////======================= Error handling
+/**
+ * try ===> code  correct
+ * catch --> error message
+ * finally ===?> execute (code correct ) || code has error
+ */
+
+// try {
+// //   console.log(x);
+//   let x = 5;
+//   console.log(x);
+// } catch (error) {
+//   console.log("let not accept hoisting");
+//   console.log(error.message);
+// }finally{
+//     console.log("finally");
+
+// }
+
+//===================== Ajax : aschrounous java script and xml  ===> (json)  ==> {"key":value}
+// request (XMLHttpRequest)===> server
+// === (url : browser) ==> requst *(server)
+//    response             //   <=====
+
+// connection server
+let xhr = new XMLHttpRequest();
+// console.log(xhr);
+
+// send request
+// var request=xhr.open("get","https://jsonplaceholder.typicode.com/users");
+
+// console.log(request);
+
+try{
+xhr.open("get", "https://jsonplaceholder.typicode.com/users"); //=open request
+// send request
+xhr.send();
+
+xhr.onreadystatechange = function () {
+//   console.log(xhr.response);// string
+//   console.log(typeof(xhr.response)); 
+// parse string to json object
+
+if (xhr.readyState==4)
+{
+if(xhr.status==200)
+{
+var result=JSON.parse(xhr.response);
+console.log(result);
+}
+
+}
+
+
 };
-result();
+}catch(error)
+{
+    console.log(error);
+    
+
+}
+
+
+
+// 200 ====> ok 
+// 500 ====> server error
+// 300 
