@@ -1,0 +1,34 @@
+signle key (primary)   ==> unique  ==> ID
+composite  key   ==> more than attrinute unique
+candidate  key   ==> more than attrinute that are repeated
+foreign  key   ==> primary key in table and used in anoter table (foreign key) to display relation
+
+
+ 
+department  (name: primary key) 
+employee     ssn ,(dep_name : forien )
+
+======================================== relation 
+------------ strong relation ship   ==> between strong entities
+------------ week relation ship  ===> week entity has relation with strong entity
+
+
+degree 
+ ----- recursive (unary)  : enentity and itself
+ ----- binary : between two entities
+ ----- ternary  : between three entities
+ ----- (n-ary)  ex :4-ary  : between more than tree entites
+
+
+cardenality ration (counter of how many entity in this relation in entities)  (cont + mandatory or not)
+
+-- one to one  ==> enity one --> one entiy         (1:1)
+-- one to many ==> enity one --> mare than enties (1:m)
+-- many to many ==> many enity  --> mare than enties    (m:n)
+
+
+
+departnemt         ||       manage        o|     employee
+
+one department must manged by one meployee
+one emplotee may mange one department
