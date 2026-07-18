@@ -1,0 +1,38 @@
+      form {
+          border: 1px solid black;
+      }
+
+      .test {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+      }
+
+      #card {
+          width: 250px;
+          height: 250px;
+          text-align: center;
+          border: 1px solid rgb(211, 93, 93);
+          margin: 20px;
+          padding: 10px;
+      }
+
+      .card-txt {
+          color: brown;
+          padding: 10px;
+      }
+
+      .card-img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          text-align: center;
+      }
+
+      .card-btn {
+          padding: 20px;
+          color: rgb(58, 8, 8);
+          background-color: rgb(228, 160, 160);
+          border-radius: 2px;
+          border-style: none;
+      }

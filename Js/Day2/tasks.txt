@@ -1,0 +1,2 @@
+====> slice , splice 
+===> complete methods 

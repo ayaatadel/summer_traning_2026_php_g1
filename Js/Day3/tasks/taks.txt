@@ -1,0 +1,87 @@
+Create an object called student that contains:
+
+name
+skills (Array)
+
+The array should contain:
+
+HTML
+CSS
+JavaScript
+
+Print the second skill.  ===> css
+
+=============
+Create an object called car with the following properties:
+
+brand = "BMW"
+model = "X5"
+year = 2020
+
+Then:
+
+Add a new property called color.
+Add a method called start() that prints:
+Car Started
+
+Call the method.
+Update the year property to 2025.
+
+Print the updated object.
+Delete the color property from the car object.
+Print the updated object.
+==========
+
+Create a Factory Function called createStudent.
+
+It should receive:
+
+name
+age
+city
+
+Return an object containing these values.
+
+Example:
+
+createStudent("Ahmed", 20, "Cairo");
+=======
+Create a Constructor Function called Employee.
+
+It should receive:
+
+name
+salary
+
+Create three employee objects using new.
+
+=========
+var user = {
+    name: "Ali",
+    age: 25
+};
+
+var person = {
+    print() {
+        console.log(this.name, this.age);
+    }
+};
+
+Use call(), bind() , apply() to execute print() using the user object.
+
+=====
+Create a Student class that contains:
+
+name
+age
+grade
+address (object)
+skills (array)
+
+Add a method called print() to display all student information.
+
+Then:
+
+Create two student objects.
+Copy the first object using structuredClone().
+Change only the copied student's name.

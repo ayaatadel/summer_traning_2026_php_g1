@@ -1,0 +1,7 @@
+====> reduce 
+===> findone
+===> findall
+
+
+////////// promise =====>https://jsonplaceholder.typicode.com/users
+----------------------- cards 
