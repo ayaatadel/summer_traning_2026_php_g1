@@ -32,3 +32,33 @@ departnemt         ||       manage        o|     employee
 
 one department must manged by one meployee
 one emplotee may mange one department
+
+====================================================== Maping ====================================
+
+mapping 
+----------- relation , entities  , attributes 
+1- Attributes
+   -- multi valued attributes (several , more than)====> new table [BK table , attrinute ]
+   -- Composite attributes ====> address[city, steet ]===> table put city , street not address
+
+2- Relation
+  -- one to many ==> BK (One) put In table (many)
+  -- one to one   ===> mandatory (الالزاميه)
+    ---- one (may) to one (must) ==> PB (must) => may 
+    ---- one (must) to one (must) ==> BK (must) => must
+    ---- one (must) to one (must) ==> new Table ==> (2 pk )
+    ---- one (may) to one (may) ==>  new Table ==> (2 pk )
+  -- Many to many ==> ==> new Table ==> (2 pk )
+
+**************** Solution *********************
+Department
+Number(pk) ,Name 
+
+Dep_location 
+dep_num (fk) , location , ID (Bk)
+
+Employee
+SSN(pk) ,Name , Address, Salary , Gender , BD , Dep_num 
+
+
+
