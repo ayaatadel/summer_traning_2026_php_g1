@@ -59,6 +59,15 @@ dep_num (fk) , location , ID (Bk)
 
 Employee
 SSN(pk) ,Name , Address, Salary , Gender , BD , Dep_num 
+=====================
+mnapping (tables)
+entities ====> new table
+relation ===> many to many  ===> new table
+multi valued attribute ---> new table
+one to one (may)===> new table
+
+
+
 
 
 

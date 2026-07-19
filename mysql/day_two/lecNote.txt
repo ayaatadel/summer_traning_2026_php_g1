@@ -1,0 +1,211 @@
+=======================> ERD 
+=======================> Mapping
+
+SQL ----> standard query language 
+
+=== Tools : xamp , laragon 
+
+
+ID  Name   year_BD
+1  mahmoud  2000
+2  leena    2025
+
+
+SQL ===> 
+ -- DDL  : Data Definition Language 
+         -- structure ( data base ,  table ,  column)
+ -- DML  : Data Manubulation Language 
+ -- DQL  : Data Query Language 
+ -- DCL  : Data Control Language 
+ -- TCL  : Transaction Control Language 
+
+
+ =========================> 
+ -- create Database : create database db_name; ===>  database database company;
+ -- Delete Database : drop database db_name; ===> drop database company;
+ -- use database  : use comany;
+ -- create table  : create table table_name (column datatype size conatrains) 
+
+ ======================== ******************* =====
+ -- columns (attributes):  id , name 
+ -- datatype : int, varchar , date , enum 
+ -- constrains (primary key (uique , notnull) , foreign key , unique , not null , nullbale)
+
+
+  decimal ===> (p,s) Precision (p): The total maximum number of digits to be stored, counting both the left and right sides of the decimal point.Scale (s): The number of digits stored to the right of the decimal point.
+enum ===> values ===> gender enum('male','female')
+
+courses ===> courses enum ('php' ,'laravel','react')
+
+
+===================> 
+Cascade on update  : update in main table ==> fk
+Cascade on delete  : delete in main table => delete
+
+
+
+========================= ****************** =========
+ 1- create table department (number int (50) primary key  50 , name varchar(200) unique not null )
+
+ 2-  create table department_location(id int (50) primary key ,location varchar (200) not null , dep_num int (50) not null  , foreign key (dep_num) REFERENCES Department (number))
+
+
+
+
+ 3- create table employee(
+    ssn  int (50) primary key ,
+    name varchar (200) not null , 
+    address varchar (200) not null ,
+     salary decimal  (50) default (0) not null ,
+      BD date null ,
+       gender enum ('male' ,'femal') not null default 'male' , 
+       dep_num int (50) not null ,
+       foreign key (dep_num) REFERENCES departnemt (number),
+       emp_supervisor int (50) not null,
+       foreign key  (emp_supervisor ) REFERENCES employee (ssn) 
+       
+       
+       )
+
+4- create table project (proj_num int (50) primary key , name varchar (200) unique notnull , location varchar (200))
+
+5- create table  emp_proj( 
+    id int primary key ,
+    emp_ssn int (50) not null , 
+    proj_num int (50) not null ,
+    hours int (30) ,
+    foreign key (emp_ssn) REFERENCES employee(ssn)  on update  Cascade  on delete Cascade,
+    foreign key (proj_num) REFERENCES project (proj_num ) on update  Cascade  on delete Cascade ,
+
+)
+
+
+create table  emp_dependences( 
+    id int (50) primary key  auto increment,
+    fname varchar (200) not null,
+    Bd data , gender enum ('male' ,'female'),
+    city varchar (200) not null ,
+    street varchar (200) not null,
+    emp_ssn int (50) not null,
+    foreign key (emp_ssn) REFERENCES employee (ssn)  on update Cascade on delete Cascade   
+    
+)
+
+
+
+
+
+------------------- Update -------
+1- structure  (alter)
+2- Data  (update)
+
+
+======== alter
+
+-- Add column
+alter table department add column (manager_ssn int (50) , foreign key (manager_ssn) REFERENCES employee (ssn) )
+
+
+=================> 
+
+id name managerssn 
+ 1 it        null
+
+=================>
+id  name  managerssn 
+ 1   it      105
+
+
+
+=====================> 
+
+rename table 
+
+alter table emp_proj rename employee_project
+
+
+====> update column 
+-- on update cascaed 
+
+
+alter table drop column manager_ssn 
+==> foregin key ===> constraint 
+===> constain name ==> department_ibfk_1
+
+
+
+/** Add on cascaed **/ 
+
+SELECT CONSTRAINT_NAME
+FROM information_schema.KEY_COLUMN_USAGE
+WHERE TABLE_NAME = 'department'
+AND COLUMN_NAME = 'manager_ssn';
+
+
+ALTER table department Drop CONSTRAINT department_ibfk_1;
+
+alter table drop column manager_ssn
+
+alter table department add column (manager_ssn int (50) , foreign key (manager_ssn) REFERENCES employee (ssn)  on update cascade)
+
+
+
+// ADD CONSTRAINT while create table
+
+create table department (number int (50) primary key  50 ,
+ name varchar(200) unique not null ,
+ manager_ssn int (50) ,
+ constraint fk_manager_emp foregin key (manager_ssn ) REFERENCES employee (ssn)
+ 
+ )
+
+ ===
+ ====
+create table department (number int (50) primary key  50 ,
+ name varchar(200) unique not null ,
+ manager_ssn int (50) ,
+  foregin key (manager_ssn ) REFERENCES employee (ssn)
+ 
+ )
+
+
+
+ ======================>
+ alter 
+ -- rename table 
+ -- add column
+ -- modify column (data type)
+ -- drop column
+ -- add constraint
+ -- drop constraint
+
+
+
+==> alter table department modify column id varchar (200) 
+
+
+===> column + fk ==> on update cascade 
+/**
+has => constrint name ==>
+  drop constraint 
+  drop column 
+  add column 
+
+  ------------
+ don't have constraint name :
+  select constraint 
+ drop constraint 
+  drop column 
+  add column 
+
+
+===================== insert data into table 
+
+instert into department ('number' , 'name ','manager_ssn') values (1,"IT",null)
+insert into department (number,name,manager_ssn) values (2,"cs",null);
+
+insert into employee (ssn,name,address ,BD , gender , salary , dep_num,emp_supervisor) values (1,"malak","cairo","2000-03-21","female","10000",1,1);
+
+
+== insert more than values 
+insert INTO security( name , address , salary , BD , gender ) values ("sonds","cairo" , 7000,"1997-07-21","femal"),("yasmin","cairo" , 5000,"1997-07-21","femal");
