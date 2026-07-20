@@ -161,8 +161,6 @@ end as "salary_level"
 from employee;
 
 
-================ stored  procedural
 
-================ transaction 
 
 
