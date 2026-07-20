@@ -1,0 +1,129 @@
+select all data 
+
+select * from employees 
+
+--- specific data (condition)
+
+select name , address from employee 
+
+
+======== Alias  columns
+select name , BD from employee ===>  select name , BD  as ' Birth Date ' from employee
+
+==== Condition 
+
+
+select name , BD  as ' Birth Date '  , salary from employee where salary >1000
+
+
+
+==========================================> 
+
+========    Update (data)  
+
+=== emp id =1 : mohammed ------> hossam
+
+/**
+
+condition where
+
+with out  condition 
+
+update employee set name = "hossam"   ===> set all values in column name with value (hossam)
+
+**/
+
+
+
+update table employee set name = "hossam"
+where id = 1 and name = "mohammed"
+
+update table employee set name = "hossam"
+where id = 1 ;
+
+update employee set name = "hossam" 
+
+
+======================================= Delete (values)
+                   // Alias
+delete from employee e where `e`.`ssn`=4;
+
+
+=== delete table 
+=====> table --> relation 
+employee -> project 
+
+
+
+====================== limit (select data )
+==== 2 employee
+
+select  * from employee limit 2
+
+
+===== order by (desc  (الكبير للصغير), ASC( الصغير للكبير))
+
+select max salary 
+1- order by + limit
+select * from employee order by salary DESC;  // select all data (order DESC) salary
+1- mahmoud 12000
+2- mohammed 10000
+select * from employee order by salary DESC limit 1;  // select max salary
+
+
+
+======================= Aggregation function (5) ===> (max , min ,avg , count ,sum)
+select max(salary) from employee====> max value 
+select Min(salary) from employee====> max value 
+select avg(salary) from employee====> max value 
+select sum(salary) from employee====> max value 
+
+SELECT count(*) from employee where salary > 5000  ==> عدد الموظفين
+=== sub query 
+select *  from employee 
+where `employee`.`salary` = (select MAX(salary) from employee);
+
+======= Aggregiation function + condition (having )
+
+عدد الموظفين الموجودين في كل قسم 
+[relation ===> department , employee   (dep_num)]
+
+id_dep   count_emp
+1           2
+2           3
+
+select dep_num , count(*) as total from employee group by (dep_num) having count(*)>=1;
+
+
+/**
+ where   ===> before group by 
+
+ having   ==> after group by 
+
+**/
+
+
+
+limit ====> specific count of rows 
+limit 5 offset 5  ===> limit (skip rows) offset (number of rows that i want to get)
+limit 1 ==> one row 
+
+/// skip first 5 rows===> and get  (5)
+limit 5 offset 5 ===> start from numeber 6 ==> anf get 5 rows (6-10)
+
+
+========== select data  second max salary
+                                  
+select * from employee 
+where salary=(select max(salary) from employee  where   ==> 9000
+salary < (select max(salary) from employee))   (9000 , 6000 , 7000)
+
+select * from employee order by(salary) DESC limit 1 OFFSET 1; 
+
+
+
+========== in , between 
+
+in (values) , (1000 , 2000, 5000) ====> 1000 , 2000 , 5000
+
+between (range) ==> (1000 , 5000)  ----> range from 1000 to 5000
