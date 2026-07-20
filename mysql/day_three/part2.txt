@@ -1,0 +1,168 @@
+=================> Employee
+ssn   name         dep_num
+
+1    mahmoud         1
+
+2    hossam          1
+
+3    leena           2
+
+4    fahd            2 
+
+5    mohammed        1
+
+6    abd alrahman    2
+
+
+======== department
+
+dep_num     name        manager_ssn
+1        Cs             1  ===> employee
+2         IT            6  ===> employee
+ 
+
+
+
+============> select manager name of department 
+
+SELECT employee.name AS manager_name, department.name AS department_name
+FROM department
+INNER JOIN employee
+ON employee.ssn = department.dep_manager;
+
+------------- select department name for each employee
+
+select employee.name as employee_name , department.name AS department_name
+from employee inner join department
+on employee.dep_num=department.number
+
+
+===============>
+
+data in two tables ====> join 
+
+inner join   ==> المشتركين فقك
+ employee_name               department_name
+hossam                           cs
+mohmoud                          cs
+leena                            cs
+mohammmed                         IT
+
+
+right join   ==> بيرجع كل الداتا اللي بتخص الطرف الايمن
+
+ employee_name               department_name
+hossam                         cs
+mohmoud                         cs
+leena                            cs
+mohammmed                         IT
+fahd                              NULL
+
+
+left joint  ==> بيرجع كل الداتا اللي بتخص الطرف الايسر
+
+ employee_name               department_name
+hossam                         cs
+
+mohmoud                         cs
+leena                             cs
+mohammmed                           IT
+
+NULL                                IS
+
+full outer joine ==> بيرجع كل حاجه
+
+ employee_name               department_name
+hossam                         cs
+mohmoud                         cs
+leena                            cs
+mohammmed                         IT
+NULL                               IS
+fahd                              NULL
+
+
+
+
+=========== using join    & natural join 
+
+using join : join between two tables that have same name of column
+
+select employee.name as employee_name , department.name AS department_name
+from employee inner join department
+using(dep_number);
+
+
+
+employee_name               department_name
+hossam                           cs
+mohmoud                          cs
+leena                            cs
+mohammmed                        IT
+
+
+
+
+********************* natural join  ***********************
+ssn   name         dep_num
+
+1    mahmoud         1
+
+2    hossam          1
+
+3    leena           2
+
+4    fahd            2 
+
+5    mohammed        1
+
+6    abd alrahman    2
+
+
+======== department
+
+dep_num     name        manager_ssn
+1        Cs             1  ===> employee
+2         IT            6  ===> employee
+
+
+select name as dep_name 
+from employee natural join department
+
+
+
+============ View =========
+
+create view salary_emp 
+as 
+select * from employee where salary>7000 ;
+
+
+====> select
+select * from  salary_emp  ;
+===> alter 
+====> drop 
+
+========================================> case then 
+switch()
+case :
+--------
+case   :
+-----
+
+
+
+select *,
+case 
+when salary=12000 then "high"
+when salary BETWEEN 7000 and 11000 then "medium"
+else "low"
+end as "salary_level"
+
+from employee;
+
+
+================ stored  procedural
+
+================ transaction 
+
+
