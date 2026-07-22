@@ -1,0 +1,15 @@
+** make Nabar page  and use it in  all pages 
+** design login , register using bootstrap
+** rewrite this array using table using array_keys and array_values
+** make page StudetsData (navbar + bootstrap) ==> table
+students=[
+  [  "name" => "mahmoud",
+    "age":24],
+  [  "name" : "nada",
+    "age":26],
+  [  "name" : "yara",
+    "age":28],
+  [  "name" : "mohammed",
+    "age":22],
+
+]
