@@ -4,5 +4,5 @@
 
 login 
 register 
-all syudents data ---> login 
+all students data ---> login 
 logout 
