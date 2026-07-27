@@ -21,7 +21,18 @@ require "navbar.php";
 // array(4) { ["name"]=> string(4) "test" ["email"]=> string(14) "tset@gmail.com" ["password"]=> string(5) "ayaat" ["btn-register"]=> string(0) "" }
 
 
+// $_POST
 
+// $keys = array_keys($_POST);
+// $stringKeys = implode(',', $keys);
+// echo $stringKeys . "<br>";  // name,email,password
+
+// // var_dump($keys);
+// $data = array_values($_POST);
+// $stringdata = "'" . implode("','", $data) . "'"; // mohammed,mohammed@gmail.com,12345
+// echo $stringdata . "<br>";
+// var_dump($data);
+// exit;
 if (isset($_POST['btn-register'])) {
 
     /**
@@ -81,6 +92,25 @@ if (isset($_POST['btn-register'])) {
         exit;
     }
 
+    /** check email exist or not */
+
+    $selectEmail = "select * from users where email=:email";
+    $sqlSelectEmail = $connection->prepare($selectEmail);
+    $sqlSelectEmail->execute(
+        [
+            ":email" => $email
+        ]
+    );
+
+    $userData = $sqlSelectEmail->fetch(PDO::FETCH_ASSOC);
+    if ($userData) {
+
+
+        header("location:register.php?errorMessage=email already exist");
+        exit;
+    }
+
+    /*        ****                  */
     $enreptedPassword = password_hash($password, PASSWORD_DEFAULT);
     try {
         //code...
@@ -99,7 +129,7 @@ if (isset($_POST['btn-register'])) {
         echo $e->getMessage();
     }
 
-
+// "drop table users" or 1=1;
     // 2. Positional Parameters (?)  ?drop 
     // $query=" insert into users (name,email,password)values(?,?,?)"; 
     // $sqlQuery=$connection->prepare($query);  // '' ''
