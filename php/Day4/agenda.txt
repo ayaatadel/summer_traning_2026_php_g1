@@ -1,0 +1,49 @@
+============> Connection with DataBase
+// MYSQLI   ||          PDO
+-- small               large
+-- mysql            -- postgree , mysql 
+
+
+======> craditaionilas 
+-- host : localhost:3306 
+-- dbtype
+-- dbName
+-- userName
+-- password
+
+==================== Steps
+
+1- connection ==> pdo()
+2- cruds (select . insert , update , create , delete)
+3-  sql query ===> string 
+
+4- string ==> sql (prepare) 
+5 - execute sql statement
+
+=======     query (prepare execute)     ========
+............... insert (execute) ,
+................ fetch Data (fetch , fetchAll) 
+
+
+
+======== Sql Injection 
+Query Parameters:
+  1. Named Parameters  (:name) 
+
+    Ex: 
+    $query = "SELECT * FROM users WHERE email = :email";
+     $stmt = $connection->prepare($query);
+    $stmt->execute([
+    ':email' => $_POST['email']
+    ]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  2. Positional Parameters (?)
+
+    Ex:
+    $query = "SELECT * FROM users WHERE email = ? AND id = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->execute([
+        $email,
+        $id
+    ]);

@@ -8,7 +8,23 @@
 </head>
 
 <body>
-     <?php require "navbar.php";?>
+    <?php
+    require "navbar.php";
+    if (isset($_GET['errorMessage'])) {
+        /**
+          * danger : red
+          * success : green
+          * primary : blue
+          * info :  light blue
+          * warning :  yellow
+         */
+        echo "<p class='w-50 my-4 m-auto p-3  text-center alert alert-danger'>" . $_GET['errorMessage'] . "</p>";
+    }
+
+
+
+
+    ?>
 
     <h1 class="text-primary text-center"> Register Form</h1>
     <form class="text-center w-75 m-auto border p-3 m-5" method="POST" action="server.php">
@@ -17,7 +33,6 @@
             <input placeholder="user name" type="text" class="form-control" id="exampleInputName1" aria-describedby="NameHelp" name="name">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input placeholder="user Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-         
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
