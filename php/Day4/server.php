@@ -124,4 +124,34 @@ if (isset($_POST['btn-register'])) {
 
 
 if (isset($_POST['btn-login'])) {
+
+    /**
+     * select data  
+     * check if data exist or not 
+     * ---- password (encrepted) ==> decrepted
+     */
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $querEmail = "SELECT * FROM users WHERE email=:email";
+    $sqlEmail = $connection->prepare($querEmail);
+
+    $sqlEmail->execute(
+        [':email' => $email]
+    );
+
+    $data = $sqlEmail->fetch(PDO::FETCH_ASSOC); // [] , [data]
+    // var_dump($data);
+
+    // array(4) { ["id"]=> int(12) ["name"]=> string(5) "leena" ["email"]=> string(15) "leena@gmail.com" ["password"]=> string(60) "$2y$10$GTp8qXV.ZOkCi/PkQpJcOOZpAs31uyVXIAV31dsdeUbcA4iAvqPc." }
+
+    // var_dump(password_verify($password,$data['password'])); 
+    if ($data && password_verify($password, $data['password'])) {
+        $_SESSION["loginID"] = $data["id"];
+        header("location:Profile.php?successMessage=login successfully");
+        exit;
+    } else {
+        header("location:login.php?errorMessage=check your email or password");
+        exit;
+    }
 }

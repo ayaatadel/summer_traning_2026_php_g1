@@ -8,7 +8,24 @@
 </head>
 
 <body>
-      <?php require "navbar.php";?>
+      <?php 
+      require "navbar.php";
+      
+
+    if (isset($_GET['errorMessage'])) {
+        /**
+          * danger : red
+          * success : green
+          * primary : blue
+          * info :  light blue
+          * warning :  yellow
+         */
+        echo "<p class='w-50 my-4 m-auto p-3  text-center alert alert-danger'>" . $_GET['errorMessage'] . "</p>";
+    }
+
+    ?>
+      
+      ?>
 
     <h1 class="text-success text-center"> Login Form</h1>
     <form method="POST" action="server.php" class="text-center w-75 m-auto border p-3 m-5">
