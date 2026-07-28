@@ -6,3 +6,14 @@ login git_hub in vs code
 
 ** Cursor 
 1- https://cursor.com/download
+
+** lovable 
+--- create web sites (front) + publish
+-- register on lovable (number , employess + 200)
+ https://lovable.dev/dashboar
+
+
+ --- install postman : https://www.postman.com/downloads/
+
+
+ 
