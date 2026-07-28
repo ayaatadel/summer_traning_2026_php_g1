@@ -1,0 +1,246 @@
+/* Enhanced styles for Todo App */
+* {
+    box-sizing: border-box
+}
+
+:root {
+    --bg1: #f0f4ff;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #5b8def;
+    --danger: #ef4444
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    margin: 0;
+    padding: 32px;
+    background: linear-gradient(180deg, #eef6ff 0%, #fbfdff 100%);
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.app {
+    width: 100%;
+    max-width: 680px;
+    background: var(--card);
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    border: 1px solid rgba(15, 23, 42, .03)
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    letter-spacing: -0.02em
+}
+
+.app p.subtitle {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+#todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px
+}
+
+#todo-input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, .06);
+    background: linear-gradient(180deg, #fff, #fbfdff);
+    font-size: 15px;
+    box-shadow: 0 6px 18px rgba(11, 26, 44, .03);
+    transition: box-shadow .15s ease, border-color .15s ease
+}
+
+#todo-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(91, 141, 239, .12)
+}
+
+#todo-form button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(180deg, var(--accent), #336fd7);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(91, 141, 239, .12)
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px
+}
+
+.filters button {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 7px 9px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 8px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.filters button.active {
+    background: rgba(91, 141, 239, .08);
+    border-color: rgba(91, 141, 239, .12);
+    color: var(--accent)
+}
+
+#clear-completed {
+    background: transparent;
+    border: 1px solid rgba(15, 23, 42, .05);
+    padding: 8px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.todo-list {
+    list-style: none;
+    padding: 6px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 40px
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(8, 15, 23, .01), rgba(8, 15, 23, .002));
+    border: 1px solid rgba(15, 23, 42, .03);
+    box-shadow: 0 6px 18px rgba(11, 26, 44, .02);
+    transition: transform .12s ease, box-shadow .12s ease, opacity .18s ease
+}
+
+.todo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(11, 26, 44, .06)
+}
+
+.todo-item .left {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(15, 23, 42, .06);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #fff
+}
+
+.checkbox input {
+    display: none
+}
+
+.check-mark {
+    width: 14px;
+    height: 14px;
+    display: block;
+    opacity: 0;
+    transform: scale(.6);
+    transition: all .12s ease;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.5
+}
+
+.checkbox.checked {
+    background: linear-gradient(180deg, var(--accent), #336fd7);
+    border-color: transparent
+}
+
+.checkbox.checked .check-mark {
+    opacity: 1;
+    transform: scale(1);
+    stroke: #fff
+}
+
+.todo-item .text {
+    font-size: 15px;
+    color: #0f172a
+}
+
+.todo-item .text.completed {
+    text-decoration: line-through;
+    color: var(--muted)
+}
+
+.todo-item button.delete {
+    background: transparent;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    font-weight: 600
+}
+
+.count {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: right
+}
+
+.empty {
+    margin: 10px 0;
+    color: var(--muted);
+    text-align: center
+}
+
+/* simple enter animation */
+.fade {
+    opacity: 0;
+    transform: translateY(-6px)
+}
+
+.fade.visible {
+    opacity: 1;
+    transform: none;
+    transition: all .18s ease
+}
+
+@media (max-width:520px) {
+    .app {
+        padding: 18px
+    }
+
+    .todo-item {
+        padding: 10px
+    }
+
+    .filters button {
+        padding: 6px 8px
+    }
+}

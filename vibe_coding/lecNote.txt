@@ -1,0 +1,8 @@
+** Github Copilot
+create account on github
+install extension
+login git_hub in vs code
+
+
+** Cursor 
+1- https://cursor.com/download
