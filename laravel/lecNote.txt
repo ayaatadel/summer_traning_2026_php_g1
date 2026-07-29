@@ -11,7 +11,7 @@ library : collection of function   (packages
 -- repeat  object 
 
 
------ laravel --------
+----- laravel -------- https://laravel.com/docs/13.x/installation
 
 ************** Design Pattern : way that solve problem *********
 
