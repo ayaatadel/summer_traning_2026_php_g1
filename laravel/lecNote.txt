@@ -1,0 +1,82 @@
+-- laravel : PHP Framework 
+FrameWork : collection of libraries (laravel , node )
+library : collection of function   (packages
+)(react)
+
+
+--------- Problems In PHP -------
+- html , php , js  , data base (not organized)
+- repetition of code 
+- syntax ==> <?php ?>
+-- repeat  object 
+
+
+----- laravel --------
+
+************** Design Pattern : way that solve problem *********
+
+design pattern : MVC (Model , View , Controller )
+Model ==> data base 
+View ===> front pages
+Controller ==> logic (functions)
+
+
+== oop php , components 
+== blade engine : html ====> php  (directives)
+
+single tone design pattern :
+
+
+
+
+============> Tools (laravel 13)
+php  install  (8.3)
+package manager :  composer (install : https://getcomposer.org/download/)
+  ------ install : 1- all users ==> next , next 2- don't check developer  mode
+    ************************** cmd : composer --version ********
+
+
+change version php : install php (https://www.php.net/downloads.php?os=windows&osvariant=windows-downloads&version=8.3)
+
+
+-- install php (.zip) ==> extract file  => rename php 
+---(php--> php.ini.development) ==> copy + past
+         copy : rename with ==> php.ini + open in vsCode || notpad
+                               -- search ;extension=(openssl,mysqli,fileinfo,mbstring) ==> remove ;
+
+        ============================ command (cmd) : where php  (environment variables )===========
+-- Xamp   :  php put in xamp  ==> C:\xampp\php  ==> in environment variables
+-- laragon  : php put in largon = => bin (C:\laragon\bin\php\php-8.3.30-Win32-vs16-x64)
+
+---------------- cmd : php --version -----------
+
+
+=== install installer of larave ==> composer global require laravel/installer
+
+===> create new laravel project => laravel new proj_name
+                  laravel new sm_php_g1
+
+
+
+artisan : tool  enable to execute laravel commands
+== Run Project :
+ 1-cd project_name
+ 2-tables (php artisan migrate)   ===> database (cradentials : .env)
+ 3-php artisan serve    
+
+
+ =====> stop serevr (run) :ctrl + c 
+
+
+
+== cycle 
+  
+  [request => Url]   client  ===> server (routes(web))
+  [response]   client  <=== server
+
+
+  (url) ==> http://127.0.0.1:8000  (/)  ===> routes  ==> web.php
+
+
+  --- web.php ===> url  ===> call function ==> controller
+                                           ==> execute

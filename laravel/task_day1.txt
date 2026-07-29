@@ -1,0 +1,2 @@
+== complete function show
+// when user click on button show -> show users data
