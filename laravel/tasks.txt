@@ -1,0 +1,7 @@
+== complete function show
+// when user click on button show -> show users data
+
+
+===================== day 2
+show (users , peoducts , categories)
+====> delete 

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 // 127.0.0.1:8000
 Route::get('/', function () {
@@ -49,3 +52,7 @@ route::get('/users/{$id}',function(){
  *
  *
  */
+
+
+route::get('/categories',[CategoryController::class,"index"]);
+route::get('/categories/$id',[CategoryController::class,"show"]); // task

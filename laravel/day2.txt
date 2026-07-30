@@ -1,0 +1,29 @@
+---- migrations  ====> structure of table
+--- models    ==> relation
+-- controller
+
+
+************************** migrations : create , add (up) ********************
+1- create migration : php artisan create_categories_table
+2- add column to table : php artisan add_description_to_categories
+3- run migration : php artisan migrate
+4- check status of migration : php artisan migrate:status
+
+        """"""""""""""" rollback (doen) """""""""""""""""
+1-php artisan migrate:rollback :===> remove last table
+1-php artisan migrate:rollback --batch=1 :===> remove  tables that take batch number 1
+1-php artisan migrate:fresh :===> remove all tables
+1-php artisan migrate:refresh :===> remove all tables + create
+============================= tables =========
+cascadeOnDelete()
+OnDelete("cascade")
+cascadeOnUpdate()
+OnUpdate("cascade")
+
+
+============================== Models 
+1- create model : php artisan make:model User
+
+==================== controller 
+php artisan make:controller ProductController
+php artisan make:controller categoryController
