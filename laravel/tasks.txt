@@ -5,3 +5,19 @@
 ===================== day 2
 show (users , peoducts , categories)
 ====> delete 
+
+
+
+======================= day 3
+
+seeders 
+factories
+
+controllers (cruds)
+relations  
+(project)
+
+
+product ===> category name (click) ===> show
+
+ show of each category ===> prducts  , orders 
