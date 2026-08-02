@@ -1,0 +1,15 @@
+===== Handel schema 
+=== create tables (migrations , models )
+
+--- create model -a 
+
+
+--- handel relation 
+
+-- routes 
+-- controller
+
+============================= cycle 
+request (click on button , url) ==> route==> controller 
+                                              view (html)  <form>  (data) ==> model ==>view
+                                              (data) => model ==>view 

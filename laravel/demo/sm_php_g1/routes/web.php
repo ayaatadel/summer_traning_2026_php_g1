@@ -54,5 +54,23 @@ route::get('/users/{$id}',function(){
  */
 
 
-route::get('/categories',[CategoryController::class,"index"]);
-route::get('/categories/$id',[CategoryController::class,"show"]); // task
+
+route::delete('/categories/{category}',[CategoryController::class,"destroy"])->name("categories.destroy"); // task
+route::post('/categories/edit/{id}',[CategoryController::class,"edit"])->name("categories.edit"); // task
+route::get('/categories',[CategoryController::class,"index"])->name("categories.index"); // task
+route::get('/categories/show/{id}',[CategoryController::class,"show"])->name("categories.show"); // task
+route::get('/categories/create',[CategoryController::class,"create"])->name("categories.create"); // task
+route::post('/categories/store',[CategoryController::class,"store"])->name("categories.store"); // task
+route::put('/categories/update/{id}',[CategoryController::class,"update"])->name("categories.update"); // task
+Route::resource('products', ProductController::class);
+
+/*  method          url                       name                    function
+  GET|HEAD        products ............... products.index ›            ProductController@index
+  POST            products ..................... products.store ›      ProductController@store
+  GET|HEAD        products/create ............ products.create ›       ProductController@create
+  GET|HEAD        products/{product} ............. products.show ›     ProductController@show
+  PUT|PATCH       products/{product} ......... products.update ›       ProductController@update
+  GET|HEAD        products/{product}/edit ......... products.edit ›  ProductController@edit
+  DELETE          products/{product} ....... products.destroy ›        ProductController@destroy
+
+*/

@@ -7,11 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    {{-- @dd($product->category->name) --}}
     <div class="card" style="width: 18rem; d-flex justify-content-between; align-items:center;">
         <div class="card-body">
-            <h5 class="card-title">{{ $category['name'] }}</h5>
-            <p class="card-text">{{ $category['description'] }}.</p>
-                </div>
+            <h5 class="card-title">product name : {{ $product['name'] }}</h5>
+            <h5 class="card-title">category name :{{ $product->category->name }} </h5>
+            {{-- <p class="card-text">{{ $product['description'] }}.</p> --}}
+            {{-- <p class="card-text">{{ $product['description'] }}.</p> --}}
+
+
+        </div>
     </div>
 </body>
 </html>

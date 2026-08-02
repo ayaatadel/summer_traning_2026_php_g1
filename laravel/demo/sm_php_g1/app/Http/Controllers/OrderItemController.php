@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Models\OrderItem;
+use App\Http\Requests\StoreOrderItemRequest;
+use App\Http\Requests\UpdateOrderItemRequest;
 
-class ProductController extends Controller
+class OrderItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products=Product::all();
-        return view("products.index",compact('products'));}
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +27,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreOrderItemRequest $request)
     {
         //
     }
@@ -35,17 +35,15 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(OrderItem $orderItem)
     {
-        // dump($product);
         //
-        return view('products.show',compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(OrderItem $orderItem)
     {
         //
     }
@@ -53,7 +51,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(UpdateOrderItemRequest $request, OrderItem $orderItem)
     {
         //
     }
@@ -61,7 +59,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(OrderItem $orderItem)
     {
         //
     }

@@ -1,0 +1,5 @@
+** lazy loading 
+with 
+eager loading
+
+--------------------- searching in laravel

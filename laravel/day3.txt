@@ -1,0 +1,180 @@
+models
+relations 
+fillable , guarded
+component
+controller 
+cruds
+---
+seeders
+factories
+
+
+
+=========== Migration ============
+create table users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255) UNIQUE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)
+
+
+======= Migration (structure of table) =======> Class
+
+ORM ==> Object Relational Mapping
+
+
+
+== Model ==> class ====> rfere on table
+
+
+== Relation  =========
+** One to One
+** One to Many  
+** Many to Many ====> one to many (pivot table)  ===> orders_items  (Many to Many ) ==(orders , products) ==>(pivot table)  
+
+
+{
+
+    order ====> order_items (one to many)
+    product ====> order_items (one to many)
+    
+}
+
+
+==== users 
+==== categories
+==== products
+====orders
+====orders_items  (Many to Many ) ==(orders , products) ==>(pivot table)
+
+
+
+====================== Rlations (https://laravel.com/docs/13.x/eloquent-relationships#main-content) ===========
+1- categories ==> ordrers 
+    1       has       M 
+    1   belongs to    1
+
+
+2- users ===> orders 
+    1       has       M 
+    1   belongs to    1
+
+3- categories ==> products
+     1       has       M 
+       1   belongs to    1
+
+4-  orders ===> order_items 
+
+     1       has       M 
+    1   belongs to    1
+5-  Products ===> order_items 
+    1       has       M 
+    1   belongs to    1
+
+
+Models 
+
+
+1- categories has many orders 
+      function orders ()
+      {
+        $this->hasMany(Order::class);
+      }
+
+
+      === Ondelete , onupdata 
+
+      -- cascade 
+      -- restrict 
+      -- set nll 
+
+
+
+      ******************************************************* Create Model ==================
+php artisan make:model Category -a (migration , controller, resource , factory , seeder)
+
+
+php artisan make:controller OrderController --resource =====> handel all function 
+
+php artisan make:controller ProductController --model=Product -r
+
+
+
+
+/**
+-a || --all   ===> migration , controller, resource , factory , seeder
+-m : migration 
+--model : model (controller)
+-s : seeder 
+-f : factory
+
+**/
+
+
+
+
+******************************** Component  (https://laravel.com/docs/13.x/blade#components)==============
+
+
+php artsan make:componet BootstrapCss
+
+use component in blade file
+
+<x-bootstrap-css />
+
+
+resources/views/components/bootstrap-css.blade.php   ===> html code
+app\View\Components\BootstrapCss.php   ===> php
+                        ------ variable 
+
+
+=============================== insert data in database ==========================
+                DataBase Seeder (https://laravel.com/docs/13.x/seeding#main-content)
+                Database Factories (https://laravel.com/docs/13.x/database-testing#main-content)
+seeders   =====> تغذيه 
+php artisan make:seeder CategorySeeder
+php artisan db:seed --class=CategorySeeder
+
+
+factories   ====> المصنع 
+php artisan make:factory CategoryFactory --model=Category
+
+
+/**
+
+seeder , factory   : foreign key (relation)  ===>  seeder , factory  : foreig key (relation)
+
+
+**/
+
+
+/***
+created at 
+updated at  
+**/
+
+
+
+
+
+
+
+create   ===> form
+
+create ===> view ===> form
+store ===> take data from form (create) and save in database
+
+update  ==> form
+
+
+edit ===> view ===> form
+/**
+id ===> category/edit/{id}  ===> category.edit 
+
+check if category exist or not  ===> if exist ===> show form with data (update)
+else ===> show error message (category not found)
+
+**/
+
+update ===> take data from form (edit) and update in database
+
+
+////////////////////////// 
+delete
+

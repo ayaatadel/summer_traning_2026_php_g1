@@ -11,28 +11,28 @@
 
 {{-- component --}}
 <a href="{{ route('categories.create') }}">
-    <x-btn-component class="primary" text="Create New Category" />
+    <x-btn-component class="primary" text="Create New product" />
 </a>
 
 <body>
     {{-- @dd($categories) --}}`
     {{-- @dump($categories) --}}
     <h1> All Categories</h1>
-    @foreach($categories as $key => $category)
+    @foreach($products as $key => $product)
     {{-- <div class="">
-        <p>{{ $category['name'] }}</p>
-        <p>{{ $category['description'] }}</p>
+        <p>{{ $product['name'] }}</p>
+        <p>{{ $product['description'] }}</p>
         <p></p>
     </div> --}}
 
     <div class="card" style="width: 18rem; d-flex justify-content-between; align-items:center;">
         <div class="card-body">
-            <h5 class="card-title">{{ $category['name'] }}</h5>
-            <p class="card-text">{{ $category['description'] }}.</p>
-            <a href="{{ route('categories.show', $category['id']) }}">
-                <x-btn-component class="info" text="View Category" />
+            <h5 class="card-title">{{ $product['name'] }}</h5>
+            <p class="card-text">{{ $product['description'] }}.</p>
+            <a href="{{ route('products.show', $product['id']) }}">
+                <x-btn-component class="info" text="View product" />
             </a>
-                    <form action="{{ route('categories.destroy',$category) }}"
+                    <form action="{{ route('products.destroy',$product) }}"
                           method="POST"
                           class="d-inline">
 
@@ -44,7 +44,7 @@
                         </button>
 
                     </form>
-            <form action="{{ route('categories.edit', $category['id']) }}" method="post">
+            <form action="{{ route('products.edit', $product['id']) }}" method="post">
 
                 <button type="submit" class="btn btn-primary">Edit</button>
 
@@ -52,14 +52,8 @@
 
         </div>
     </div>
-
-
     @endforeach
     <x-bootstrap-js />
-
-     <hr>
-    <p> Products</p>
-    
 </body>
 
 </html>
