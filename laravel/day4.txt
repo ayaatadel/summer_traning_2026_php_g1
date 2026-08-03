@@ -15,4 +15,11 @@ login ,register
 ==== > function -> json  
 =====> postman ===>
 
+
+
+
 === Open ai  (api key ) 
+
+https://auth.openai.com/create-account
+
+
