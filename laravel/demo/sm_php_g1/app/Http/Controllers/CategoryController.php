@@ -122,8 +122,9 @@ class CategoryController extends Controller
     }
 
 
-    function destroy(Category $category)
+    function destroy($id)
     {
+            $category = Category::findorfail($id);
         //  var_dump($category);
         $category->delete();
         return to_route("categories.index");

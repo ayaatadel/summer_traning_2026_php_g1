@@ -21,3 +21,13 @@ relations
 product ===> category name (click) ===> show
 
  show of each category ===> prducts  , orders 
+
+
+
+=================== day4
+authentication in web
+use middleware in web and api
+authentication using api
+
+complete controllers in api 
+=================================

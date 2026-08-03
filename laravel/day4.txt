@@ -8,5 +8,11 @@ login ,register
 
 ==== Authrization      ========> access on data or not
 -==== middleware 
-==== Api 
+
+==========================
+
+==== Api  : Application programming Interface (urls) ===> php artisan install:api
+==== > function -> json  
+=====> postman ===>
+
 === Open ai  (api key ) 
