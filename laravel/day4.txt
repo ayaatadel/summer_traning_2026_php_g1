@@ -1,0 +1,12 @@
+==== Request ==> php artisan make:request ProductRequest
+==== Authentication    =======> login , register 
+/**
+
+login ,register
+
+**/
+
+==== Authrization      ========> access on data or not
+-==== middleware 
+==== Api 
+=== Open ai  (api key ) 

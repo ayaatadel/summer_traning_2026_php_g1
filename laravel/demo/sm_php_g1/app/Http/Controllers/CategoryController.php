@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\Category;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    use AuthorizesRequests;
     //
     function index()
     {
@@ -17,10 +22,16 @@ class CategoryController extends Controller
     }
     function show($id)
     {
+
+
+
+
+
         // $categories=Category::all();
         $category = Category::findorfail($id);
         // dd($categories); // dump + die
         // var_dump($category);
+         $this->authorize('view', $category );
         return view("categories.show", compact("category"));
     }
 
@@ -34,7 +45,7 @@ class CategoryController extends Controller
         return view("categories.create");
     }
 
-    function store(Request $request)
+    function store(CategoryRequest $request)
     {
         // var_dump($_REQUEST);
         // var_dump($request->all());
@@ -54,30 +65,31 @@ class CategoryController extends Controller
 
         //**************** Validation on data  */
 
-        $requestedData = $request->validate(
-            [
-                "name" => "required|min:3|max:20|string|unique:categories,name",
-                // email
-                // "email"=>"rquired|unique:categories,email|email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/",
+        // $requestedData = $request->validate(
+        //     [
+        //         "name" => "required|min:3|max:20|string|unique:categories,name",
+        //         // email
+        //         // "email"=>"rquired|unique:categories,email|email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/",
 
 
-                "description" => "required|min:3|max:100"
-            ],
-            [
-                "name.required" => "name is required",
-                "name.min" => "name must be at least 3 characters",
-                "name.max" => "name must be less than 20 characters",
-                "name.string" => "name must be string",
-                "name.unique" => "name is already exists",
+        //         "description" => "required|min:3|max:100"
+        //     ],
+        //     [
+        //         "name.required" => "name is required",
+        //         "name.min" => "name must be at least 3 characters",
+        //         "name.max" => "name must be less than 20 characters",
+        //         "name.string" => "name must be string",
+        //         "name.unique" => "name is already exists",
 
-                "description.required" => "description is required",
-                "description.min" => "description must be at least 3 characters",
-                "description.max" => "description must be less than 100 characters",
-            ]
+        //         "description.required" => "description is required",
+        //         "description.min" => "description must be at least 3 characters",
+        //         "description.max" => "description must be less than 100 characters",
+        //     ]);
 
 
 
-        );
+
+        $requestedData = $request->validated();
 
         Category::create($requestedData);
         // return redirect()->route("categories.index")->with("success","category created successfully");
@@ -112,8 +124,8 @@ class CategoryController extends Controller
 
     function destroy(Category $category)
     {
-    //  var_dump($category);
-    $category->delete();
-    return to_route("categories.index");
+        //  var_dump($category);
+        $category->delete();
+        return to_route("categories.index");
     }
 }

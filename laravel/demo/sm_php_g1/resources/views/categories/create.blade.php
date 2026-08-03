@@ -32,13 +32,13 @@
         <div class="alert alert-danger w-50 m-auto">{{ $message }}</div>
         @enderror
         <label for="name">Category Name:</label>
-        <input type="text" name="name" placeholder="Category Name">
+        <input type="text" name="name" placeholder="Category Name"   value="{{ old('name') }}">
    @error('description')
         <div class="alert alert-danger w-50 m-auto">{{ $message }}</div>
         @enderror
         <label for="description">Category Description:</label>
 
-        <textarea name="description" placeholder="Description"></textarea>
+        <textarea name="description" placeholder="Description">{{ old('description') }}</textarea>
         <button type="submit">Create Category</button>
     </form>
         <x-bootstrap-Js />
